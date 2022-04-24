@@ -1,0 +1,239 @@
+/* ******************** Reset ******************** */
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+input {
+    outline: none;
+    border: none;
+}
+
+/* ******************** Fonts ******************** */
+@font-face {
+    font-family: "Poppins";
+    src: url(./fonts/Poppins-Regular.ttf);
+    font-weight: 400;
+}
+@font-face {
+    font-family: "Poppins";
+    src: url(./fonts/Poppins-Medium.ttf);
+    font-weight: 500;
+}
+@font-face {
+    font-family: "Poppins";
+    src: url(./fonts/Poppins-SemiBold.ttf);
+    font-weight: 600;
+}
+@font-face {
+    font-family: "Poppins";
+    src: url(./fonts/Poppins-Bold.ttf);
+    font-weight: 700;
+}
+
+/* ******************** Variable ******************** */
+:root {
+    --body-bgColor: hsl(0, 100%, 74%);
+    --content-Color: hsl(0, 0%, 100%);
+    --message-bgColor: hsl(248, 32%, 49%);
+    --form-bgColor: hsl(0, 0%, 100%);
+    --submit-bgColor: hsl(154, 59%, 51%);
+}
+
+/* ******************** Global Style ******************** */
+body,
+input {
+    font-family: "Poppins";
+}
+
+body {
+    min-width: 375px;
+    background-image: url(./images/bg-intro-mobile.png);
+    background-color: var(--body-bgColor);
+}
+
+.container {
+    max-width: 327px;
+    margin: 5.5rem auto 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-wrapper {
+    width: 100%;
+    margin-bottom: 4rem;
+}
+
+.form-wrapper {
+    width: 100%;
+    margin-bottom: 4.25rem;
+}
+
+@media screen and (min-width: 768px) {
+    body {
+        background-image: url(./images/bg-intro-desktop.png);
+    }
+    .container {
+        max-width: 720px;
+        flex-direction: row;
+    }
+    .content-wrapper {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .form-wrapper {
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+/* ******************** Content ******************** */
+.content-wrapper h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 36px;
+    color: var(--content-Color);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.content-wrapper p {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 26px;
+    color: var(--content-Color);
+    text-align: center;
+}
+
+@media screen and (min-width: 768px) { 
+    .content-wrapper h1 {
+        text-align: left;
+        margin-bottom: 1rem;
+    }
+       
+    .content-wrapper p {
+        text-align: left;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .content-wrapper h1 {
+        font-size: 3.125rem;
+        font-weight: 700;
+        line-height: 55px;
+    }
+}
+
+/* ******************** Form ******************** */
+.message {
+    padding: 1.125rem 4.125rem;
+    background-color: var(--message-bgColor);
+    border-radius: 10px;
+    box-shadow: 0px 8px 0px rgba(0, 0, 0, 0.14688);
+    margin-bottom: 1.5rem;
+}
+
+.message p {
+    color: var(--content-Color);
+    font-size: .9375rem;
+    font-weight: 400;
+    line-height: 26px;
+    text-align: center;
+}
+
+.message p span {
+    font-weight: 700;
+}
+
+form {
+    background-color: var(--form-bgColor);
+    border-radius: 10px;
+    padding: 1.5rem;
+}
+
+.input-wrapper {
+    margin-bottom: 1rem;
+}
+
+form input {
+    width: 100%;
+    font-size: .875rem;
+    font-weight: 600;
+    letter-spacing: .25px;
+    border-radius: 5px;
+    border: 1px solid #DEDEDE;
+    padding: .9375rem 1.25rem;
+    margin-bottom: .375rem;
+}
+
+.show-error input {
+    border: 2px solid var(--body-bgColor);
+    background: url(./images/icon-error.svg) no-repeat center right 1rem;
+}
+
+.input-wrapper input:focus {
+    outline: 1px solid var(--message-bgColor);
+}
+
+.show-error input[type = email]::placeholder {
+    color: var(--body-bgColor);
+}
+
+.input-wrapper small {
+    display: none;
+}
+
+.show-error small {
+    display: block;
+    color: var(--body-bgColor);
+    font-size: .6875rem;
+    font-weight: 500;
+    font-style: italic;
+    text-align: right;
+}
+
+form input[type = submit] {
+    background-color: var(--submit-bgColor);
+    color: var(--content-Color);
+    box-shadow: inset 0px -4px 0px rgba(0, 0, 0, 0.0908818);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: .5rem;
+    cursor: pointer;
+}
+
+form p {
+    font-size: .6875rem;
+    font-weight: 500;
+    color: hsl(246, 25%, 77%);
+    text-align: center;
+    line-height: 21px;
+}
+
+form p span {
+    font-weight: 700;
+    color: var(--body-bgColor);
+}
+
+@media screen and (min-width: 768px) {
+    .input-wrapper {
+        margin-bottom: 1.25rem;
+    }
+}
